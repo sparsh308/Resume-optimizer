@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resume Matcher</title>
+
+  
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+    <script src="https://use.fontawesome.com/968d5ffcf8.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href='https://cdnjs.cloudflare.com/ajax/libs/imagehover.css/2.0.0/css/imagehover.min.css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  </head>
+
+</head>
+
+<body>
+  <!--Navigation bar-->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="home">Resume<span>Matcher</span></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="btn-trial"><a href="logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--/ Navigation bar-->
+
+  
+    <div class="container text-center">
+
+      <h3>Application</h3>
+
+      <form class="mc-trial row" action="Application" method="POST">
+        {% csrf_token %}
+        <div class="form-group col-md-3 col-md-offset-2 col-sm-4">
+          <div class=" controls">
+            <input name="username1" placeholder="Enter Your Resume" class="form-control" type="text" required id="iduser1"/>
+          </div>
+        </div>
+       
+        <!-- End name input -->
+        <div class="form-group col-md-3 col-sm-4">
+          <div class=" controls">
+            <input name="password1" placeholder="Enter Your Job Description" class="form-control" type="password1" id="idpassword1" required?>
+        
+          </div>
+        </div>
+        
+        <!-- End password input -->
+        <div class="col-md-2 col-sm-4">
+          <p>
+            <button name="submit" type="submit" class="btn btn-block btn-submit">
+         
+            Submit <i class="fa fa-arrow-right"></i></button>
+          </p>
+        </div>
+      
+      </form>
+      <div>
+ 
+
+<div>
+    <h4 style="color:red;"> Missing Keywords :</h4>
+    <h4 style="color: red;"> {{data}}</h4>
+</div>
+
+ 
+  
+
+
+  <script src="{% static 'js/jquery.min.js'%}"></script>
+  <script src="{% static 'js/jquery.easing.min.js'%}"></script>
+  <script src="{% static 'js/bootstrap.min.js'%}"></script>
+  <script src="{% static 'js/custom.js'%}"></script>
+  <script src="{% static 'contactform/contactform.js'%}"></script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume Matcher</title>
+  <meta name="description" content="web app developed by sparsh kishore ">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+  <script src="https://use.fontawesome.com/968d5ffcf8.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+  <link rel="stylesheet" type="text/css" href='https://cdnjs.cloudflare.com/ajax/libs/imagehover.css/2.0.0/css/imagehover.min.css'>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <style>
+        body{
+            background-image: url("../static/img/photo04.jpg")  ;
+        }
+    </style>
+  <!--Navigation bar-->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="home">Resume<span>Matcher</span></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="modal-dialog modal-sm">
+
+    <!-- Modal content no 1-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center form-title">Sign up</h4>
+      </div>
+      <div class="modal-body padtrbl">
+
+        <div class="login-box-body">
+          <p class="login-box-msg">Sign up to start your session</p>
+          <div class="form-group">
+            <form name="" id="loginForm" action="home" method="post">
+              {% csrf_token %}
+              <div class="form-group has-feedback">
+                <!----- username -------------->
+                <input class="form-control" placeholder="Username" id="loginid" type="text" autocomplete="off" name="username" required/>
+                <span style="display:none;font-weight:bold; position:absolute;color: red;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginid"></span>
+                <!---Alredy exists  ! -->
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+              </div>
+              <div>
+              
+              </div>
+              <div class="form-group has-feedback">
+                <!----- username -------------->
+                <input class="form-control" placeholder="Email" id="emailid" type="email" autocomplete="off" name="email" required/>
+                <span style="display:none;font-weight:bold; position:absolute;color: red;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginid"></span>
+                <!---Alredy exists  ! -->
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+              </div>
+              <div>
+                
+              </div>
+              <div class="form-group has-feedback">
+                <!----- password -------------->
+                <input class="form-control" placeholder="Password" id="loginpsw" type="password" autocomplete="off" name="password" required/>
+                <span style="display:none;font-weight:bold; position:absolute;color: grey;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginpsw"></span>
+                <!---Alredy exists  ! -->
+        
+                
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="checkbox icheck">
+                    <label>
+                              <input type="checkbox" id="loginrem" > Remember Me
+                            </label>
+                  </div>
+                </div>
+                <div class="col-xs-12">
+                  <button type="submit" class="btn btn-green btn-block btn-flat" >Sign In</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
