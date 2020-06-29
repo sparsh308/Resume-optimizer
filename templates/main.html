@@ -44,18 +44,19 @@
 
       <h3>Application</h3>
 
-      <form class="mc-trial row" action="Application" method="POST">
+      <form class="mc-trial row" action="Application" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="form-group col-md-3 col-md-offset-2 col-sm-4">
-          <div class=" controls">
-            <input name="username1" placeholder="Enter Your Resume" class="form-control" type="text" required id="iduser1"/>
+        
+          <div class="form-group col-md-3 col-sm-4" >
+            <label for="exampleFormControlFile1"></label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="document">
           </div>
-        </div>
+        
        
         <!-- End name input -->
         <div class="form-group col-md-3 col-sm-4">
           <div class=" controls">
-            <input name="password1" placeholder="Enter Your Job Description" class="form-control" type="password1" id="idpassword1" required?>
+            <input name="jd" placeholder="Enter Your Job Description" class="form-control" type="text" id="idjd" required?>
         
           </div>
         </div>

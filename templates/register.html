@@ -53,7 +53,7 @@
           <p class="login-box-msg">Sign up to start your session</p>
           <div class="form-group">
             <form name="" id="loginForm" action="home" method="post">
-              {% csrf_token %}
+            {% csrf_token %}
               <div class="form-group has-feedback">
                 <!----- username -------------->
                 <input class="form-control" placeholder="Username" id="loginid" type="text" autocomplete="off" name="username" required/>
@@ -83,11 +83,41 @@
                 
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
               </div>
+              <div class="form-group has-feedback" name="function">
+
+                <select id="function" class="form-control" name="function">
+                  <option > Select function </option>
+                  <option value="Marketing">Marketing</option>
+                  <option value="Finance">Finance</option>
+                  <option value="Sales">Sales</option>
+                  <option value="Customer Service">Customer Service</option>
+                  <option value="Tech-IT-ITES">Tech-IT-ITES</option>
+                  <option value="Sales">Sales</option>
+                  <option value="HR">HR</option>
+                  <option value="Admin">Admin</option>
+                  <option value="Supply chain">Supply chain</option>
+                  <option value="Consultant">Consultant</option>
+                </select>
+                
+              </div>
+              
+              
+              <div class="form-group has-feedback" >
+                  <select id="salarybkt" class="form-control" name=salarybkt>
+                  <option >Select Salary Bracket</option>
+                  <option value="less than 5,00,000">less than 5,00,000</option>
+                  <option value="30,00,000 & more">30,00,000 & more</option>
+                  <option value="30,00,000 & moret">30,00,000 & more</option>
+                  <option value="30,00,000 & more">30,00,000 & more</option>
+                  <option value="30,00,000 & more"> 30,00,000 & more</option>
+                  required </select>
+               
+              </div>
               <div class="row">
                 <div class="col-xs-12">
                   <div class="checkbox icheck">
                     <label>
-                              <input type="checkbox" id="loginrem" > Remember Me
+                              <input type="checkbox" id="loginrem" > Agree To Term and conditions
                             </label>
                   </div>
                 </div>
