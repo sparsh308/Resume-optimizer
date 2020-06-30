@@ -1,1 +1,1 @@
-web: gunicorn optimizer.wsgi --log-file -
+web: gunicorn optimizer.wsgi
