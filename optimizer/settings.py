@@ -25,7 +25,7 @@ SECRET_KEY = 'eo1-cv%t@dm$6*he&5a_oi@uj4no_!ipx9#@5z+-j82v(^dj$2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sparshapp-example.herokuapp.com','127.0.0.1']
 
 
 # Application definition
