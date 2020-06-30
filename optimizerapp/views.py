@@ -98,7 +98,7 @@ def Application(request):
        
        
 
-        loc = ('D:\db.xlsx')
+        loc = (os.path.join(settings.MEDIA_ROOT,'db.xlsx'))
 
         wb = xlrd.open_workbook(loc)
         sheet = wb.sheet_by_index(0)
