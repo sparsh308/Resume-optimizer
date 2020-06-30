@@ -19,6 +19,7 @@
 </head>
 
 <body>
+
   <!--Navigation bar-->
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -38,46 +39,66 @@
     </div>
   </nav>
   <!--/ Navigation bar-->
-
+<!--Pricing-->
+<section id="pricing" class="section-padding">
+  <div class="container">
+    <div class="row">
+      <center><h3>Application</h3></center>
+      <ul style="padding-left: 40%;  list-style-type: circle;">
+        <li >Step 1 : Choose Your Resume</li>
+        <li>Step 2 : Paste Your Job Description</li>
+        <li>Step 3: Click on Process to get Result</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</section>
   
-    <div class="container text-center">
-
-      <h3>Application</h3>
-
+<section  class="section-padding">
+  <div class="container">
+    <div class="row">
       <form class="mc-trial row" action="Application" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         
           <div class="form-group col-md-3 col-sm-4" >
             <label for="exampleFormControlFile1"></label>
             <input type="file" class="form-control-file" id="exampleFormControlFile1" name="document">
+            
           </div>
-        
-       
-        <!-- End name input -->
-        <div class="form-group col-md-3 col-sm-4">
-          <div class=" controls">
-            <input name="jd" placeholder="Enter Your Job Description" class="form-control" type="text" id="idjd" required?>
-        
+          <div class="form-group col-md-5 col-sm-4">
+            <label for="comment">Job Description:</label>
+            <textarea style="resize: none;" class="form-control" rows="5" name="jdbox" id="comment" placeholder="Paste Your Job Description Here"></textarea>
           </div>
-        </div>
-        
-        <!-- End password input -->
-        <div class="col-md-2 col-sm-4">
-          <p>
-            <button name="submit" type="submit" class="btn btn-block btn-submit">
-         
-            Submit <i class="fa fa-arrow-right"></i></button>
-          </p>
-        </div>
-      
+          <div class="col-md-4 col-sm-5" style="padding-top: 55px;padding-left: 55px ">
+            <p>
+              <button name="submit" type="submit" class="btn btn-block btn-submit">
+           
+              Process <i class="fa fa-arrow-right"></i></button>
+            </p>
+          </div>
       </form>
-      <div>
+    
+      </div>
+    </div>
+    
+</section>
+<center><div class="col-md-8 col-sm-5" style="padding-left: 30%;">
+  <h4 style="color:red;"> Missing Keywords :</h4>
+  <h4 style="color: red;"> {{data}}</h4>
+</div></center>
+
+
+     
+
+      
+              
+    
+       
+        
+      
  
 
-<div>
-    <h4 style="color:red;"> Missing Keywords :</h4>
-    <h4 style="color: red;"> {{data}}</h4>
-</div>
+
 
  
   

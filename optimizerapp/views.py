@@ -7,6 +7,7 @@ from django.core.files.storage import FileSystemStorage
 from django.conf import settings
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
+from django.core.files.base import ContentFile
 import docx2txt
 import xlrd
 import os
@@ -38,14 +39,14 @@ def home(request):
             newUserProfile=UserProfile(function=function,salarybkt=salarybkt,user=user)
             newUserProfile.save()
             
-            email=EmailMessage(
-                'hello thank you for sign up',
-                'hello thank you for sign up',
-                settings.EMAIL_HOST_USER,
-                [email],
-            )
+           ## email=EmailMessage(
+             ##   'hello thank you for sign up',
+            ##    'hello thank you for sign up',
+            ##    settings.EMAIL_HOST_USER,
+            ##    [email],
+           ## )
             
-            email.send()
+           ## email.send()
             print('usercreated')
 
         return redirect('/home')
@@ -91,6 +92,12 @@ def Application(request):
         user.doc= uploaded_file
         user.save()
 
+
+        jd=request.POST.get("jdbox")
+        print(jd)
+       
+       
+
         loc = ('D:\db.xlsx')
 
         wb = xlrd.open_workbook(loc)
@@ -111,7 +118,8 @@ def Application(request):
         #print(len(ulist))
         resume = docx2txt.process(os.path.join(settings.MEDIA_ROOT,'Appdata','resume.docx'))
         #print(resume[0:40])
-        JD = docx2txt.process("d:/2.docx")
+        JD = jd
+       
         #print(JD[0:40])
 
         job =  []
