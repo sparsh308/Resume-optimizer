@@ -5,7 +5,25 @@
     Author URL: https://bootstrapmade.com
 */
 
+.width-auto {
+    width: auto;
+}
+
+.text-lg {
+    font-size: 2rem;
+}
+
+.carousel-indicators li {
+    border: none;
+    background: #ccc;
+}
+
+.carousel-indicators li.active {
+    background: #28a745;
+}
 body {
+    background: linear-gradient(to left, #51cc48, #39df9c);
+    min-height: 100vh;
 	font-size: 15px;
     line-height: 1.52;
     color: #717f86;
@@ -74,6 +92,7 @@ Navigation bar
     color: #5FCF80 !important;
     outline: none;
 }
+
 
 .btn-trial a{
 	background-color: #5FCF80;
