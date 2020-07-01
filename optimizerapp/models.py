@@ -13,3 +13,4 @@ class UserProfile(models.Model):
     salarybkt=models.CharField(max_length=100)
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     doc=models.FileField(upload_to='Appdata')
+
