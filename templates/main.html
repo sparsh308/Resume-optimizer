@@ -42,7 +42,7 @@
 <!--Pricing-->
 <section id="pricing" class="section-padding">
   <div class="container">
-    <div class="row">
+    <div class="row" style="padding-top: 5px;">
       <center><h3>Application</h3></center>
       <ul style="padding-left: 40%;  list-style-type: circle;">
         <li >Step 1 : Choose Your Resume</li>
@@ -77,32 +77,38 @@
             </p>
           </div>
       </form>
-    
-      </div>
+     
+    <div class="" >
+      <h4 style="color:red;"> Missing Keywords :</h4>
+      <h4 style="color: red;"> {{data}}</h4>
     </div>
     
-</section>
-<center><div class="col-md-8 col-sm-5" style="padding-left: 30%;">
-  <h4 style="color:red;"> Missing Keywords :</h4>
-  <h4 style="color: red;"> {{data}}</h4>
-</div></center>
 
-
-     
-
-      
-              
+  </div> 
+  </div>
+  </section> 
     
-       
-        
-      
- 
 
 
-
- 
+    <footer id="footer" class="footer">
+      <div class="container text-center">
   
-
+    
+        
+        <div class="credits">
+          <div class="container text-center">
+            ©2020 Resume matcher
+            <span>
+              <p style="color: white;">Made With <span style="font-size:150%;color:red;">&hearts;</span> In India
+    
+    
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+    
+  
 
   <script src="{% static 'js/jquery.min.js'%}"></script>
   <script src="{% static 'js/jquery.easing.min.js'%}"></script>
