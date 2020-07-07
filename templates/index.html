@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Resume Matcher</title>
+  <title>Get InterviewCall</title>
   <meta name="description" content="web app developed by sparsh kishore ">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
   <script src="https://use.fontawesome.com/968d5ffcf8.js"></script>
@@ -25,20 +25,23 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="home">Resume<span>Optimizer</span></a>
+        <a class="navbar-brand" href="home">Get<span>InterviewCall</span></a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#feature">Features</a></li>
-          <li><a href="#pricing">Pricing</a></li>
           
+          <!--<li><a href="#pricing">Pricing</a></li>--> 
+          <li><a href="#faculity-member">Our Team</a></li>
+          <li><a href="#contact">Contact Us</a></li>
           {% if user.is_authenticated %}
           <li><a> Hello,{{user.username}} </a></li>
+         
           <li class="btn-trial"><a href="logout">Logout</a></li>
           {% else %}
           <li><a href="register" >Sign up</a></li>
           <li class="btn-trial"><a href="#footer">Login</a></li>
           {% endif %}
+          
         </ul>
       </div>
     </div>
@@ -52,12 +55,13 @@
         <div class="row">
           <div class="banner-text text-center">
             <div class="text-border">
-              <h2 class="text-dec">Free Resume Optimizer</h2>
+              <h2 class="text-dec">Get InterviewCall</h2>
             </div>
             <div class="intro-para text-center quote">
               <p class="big-text">Find the Right Keyword For Your Resume, </p>
               
-              <p class="small-text">Our application will help you to find the Right keyword which is important for resume<br>Right Keyword according to the job description inceases your chances of getting an interview call</p>
+              <p class="small-text">Our AI-based platform allows you to figure out right keywords hidden in the job descriptions that are searched by the job listing platforms & recruiters to rate your resume against the job.<br>
+                This AI-Based platform is free for you to use. Our whole team of getinterviewcall.com is working day and night to improve the platform so that we can get you more and more interview calls.<br>Do share this with your friends so that we can impact & improve more lives </p>
               {% if user.is_authenticated %}
           
             <a href="app_page" class="btn get-quote">Go To Application</a>
@@ -65,9 +69,7 @@
               <a href="#footer" class="btn get-quote">Get Started</a>
               {% endif %}
             </div>
-            <a href="#feature" class="mouse-hover">
-              <div class="mouse"></div>
-            </a>
+            
           </div>
         </div>
       </div>
@@ -83,7 +85,7 @@
     </div>
   </section>
  
-  <!--Cta-->
+  <!--Cta-
   <section id="cta-2">
     <div class="container">
       <div class="row">
@@ -91,55 +93,52 @@
           <h2 class="text-center">Subscribe Now</h2>
           <p class="cta-2-txt">Sign up for our free Resume Matcher,And We will help you Optimizing your Resume</p>
           <div class="cta-2-form text-center">
-            <form action="#" method="post" id="workshop-newsletter-form">
-              <input name="" placeholder="Enter Your Email Address" type="email">
+            <form action="subscribe" method="post" id="workshop-newsletter-form">
+               {% csrf_token %}
+              <input name="" placeholder="Enter Your Email Address" name="emailsub" type="email">
               <input class="cta-2-form-submit-btn" value="Subscribe" type="submit">
             </form>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <!--/ Cta-->
+  </section> -->
   <!--work-shop-->
-  <section id="work-shop" class="section-padding">
-    <div class="container">
-      
-      </div>
-    
-  </section>
+
   <!--/ work-shop-->
   <!--Faculity member-->
   <section id="faculity-member" class="section-padding">
     <div class="container">
       <div class="row">
         <div class="header-section text-center">
-          <h2>Meet Our Developers</h2>
-          <p>Real people, dedicated to solving real problems.</p>
+          <h2>Meet Our Leadership Team</h2>
+          <p>Real people, dedicated to help you get that interview call</p>
           <hr class="bottom-line">
         </div>
-        {% for dev in devs %}
+         {% for dev in devs %} 
         <div class="col-lg-4 col-md-4 col-sm-4">
           <div class="pm-staff-profile-container">
             <div class="pm-staff-profile-image-wrapper text-center">
               <div class="pm-staff-profile-image">
-                <img src=" {% static 'img/sparsh_image.jpg'%} "  alt="" class="img-thumbnail img-circle" />
+                <img src= "{{dev.img.url}}"  alt="" class="img-thumbnail img-circle" />
               </div>
             </div>
             <div class="pm-staff-profile-details text-center">
               <p class="pm-staff-profile-name">{{dev.name}}</p>
               <p class="pm-staff-profile-title">{{dev.desc}}</p>
+              
             </div>
           </div>
         </div>
-        {% endfor %}
+       
+     {% endfor %} 
       </div>
     </div>
   </section>
   <!--/ Faculity member-->
  
  
-  <!--Pricing-->
+  <!--Pricing
   <section id="pricing" class="section-padding">
     <div class="container">
       <div class="row">
@@ -150,13 +149,13 @@
         </div>
         <div class="col-md-4 col-sm-4">
           <div class="price-table">
-            <!-- Plan  -->
+             Plan  
             <div class="pricing-head">
               <h4>Monthly Plan</h4>
               <span class="fa fa-usd curency"></span> <span class="amount">200</span>
             </div>
 
-            <!-- Plean Detail -->
+            
             <div class="price-in mart-15">
               <a href="#" class="btn btn-bg green btn-block">PURCHACE</a>
             </div>
@@ -164,13 +163,13 @@
         </div>
         <div class="col-md-4 col-sm-4">
           <div class="price-table">
-            <!-- Plan  -->
+         
             <div class="pricing-head">
               <h4>Quarterly Plan</h4>
               <span class="fa fa-usd curency"></span> <span class="amount">800</span>
             </div>
 
-            <!-- Plean Detail -->
+            
             <div class="price-in mart-15">
               <a href="#" class="btn btn-bg yellow btn-block">PURCHACE</a>
             </div>
@@ -178,13 +177,13 @@
         </div>
         <div class="col-md-4 col-sm-4">
           <div class="price-table">
-            <!-- Plan  -->
+            
             <div class="pricing-head">
               <h4>Year Plan</h4>
               <span class="fa fa-usd curency"></span> <span class="amount">1200</span>
             </div>
 
-            <!-- Plean Detail -->
+           
             <div class="price-in mart-15">
               <a href="#" class="btn btn-bg red btn-block">PURCHACE</a>
             </div>
@@ -193,7 +192,7 @@
       </div>
     </div>
   </section>
-  <!--/ Pricing-->
+   Pricing-->
   <!--Contact-->
   <section id="contact" class="section-padding">
     <div class="container">
@@ -276,14 +275,6 @@
         <h4 style="color: red;">{{message}}</h4>
         {% endfor %}
       </div>
-      <!-- End newsletter-form -->
-      <ul class="social-links">
-        <li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
-        <li><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
-        <li><a href="#link"><i class="fa fa-google-plus fa-fw"></i></a></li>
-        <li><a href="#link"><i class="fa fa-dribbble fa-fw"></i></a></li>
-        <li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
-      </ul>
     
       <div class="credits">
         <div class="container text-center">

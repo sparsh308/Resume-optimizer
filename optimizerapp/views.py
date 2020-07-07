@@ -11,6 +11,8 @@ from django.core.files.base import ContentFile
 import docx2txt
 import xlrd
 import os
+
+
 def register(request):
     return render(request,"register.html")
 
