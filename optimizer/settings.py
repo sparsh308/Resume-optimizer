@@ -79,11 +79,12 @@ WSGI_APPLICATION = 'optimizer.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'Database1',
-        'USER':'postgres',
-        'PASSWORD':'1234',
-        'HOST':'localhost',
+         'ENGINE': 'django.db.backends.postgresql',
+        'NAME':'database name',
+        'USER':'database user',
+        'PASSWORD':'database password',
+        'HOST':'database endpoint',
+        'PORT':'database port'
         
 
     }
