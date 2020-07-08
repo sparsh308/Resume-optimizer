@@ -102,8 +102,8 @@ DATABASES['default'].update(db_from_env)
 
 #S3 BUCKETS CONFIG
 
-AWS_ACCESS_KEY_ID = 'AKIAZSHW566CSDDEJZX2'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = '************'
+AWS_SECRET_ACCESS_KEY = '***************'
 AWS_STORAGE_BUCKET_NAME = 'getinterviewcallstorage1'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
