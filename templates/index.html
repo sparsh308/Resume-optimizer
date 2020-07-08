@@ -241,8 +241,11 @@
   <!--Footer-->
   <footer id="footer" class="footer">
     <div class="container text-center">
-
-      <h3>Login Now!</h3>
+      {% if user.is_authenticated %}
+          
+      {% else %}
+      <div style="padding-left: 5px;"><h3>Login Now!</h3></div>
+      
 
       <form class="mc-trial row" action="app_page" method="POST">
         {% csrf_token %}
@@ -270,14 +273,24 @@
         </div>
       
       </form>
-      <div>
-        {% for message in messages %}
-        <h4 style="color: red;">{{message}}</h4>
-        {% endfor %}
-      </div>
-    
+      <center>
+        <div style="padding-left: 32px;">
+          {% for message in messages %}
+          <h4 style="color: red" >{{message}}</h4>
+          {% endfor %}
+        </div>
+      </center>
+     
+      {% endif %}
       <div class="credits">
         <div class="container text-center">
+          <div>{% if user.is_authenticated %}
+          
+            {% else %}
+            <a href="register" class="btn btn-block " >Sign up Now!</a></li>
+          
+            {% endif %}</div>
+          
           ©2020 Resume matcher
           <span>
             <p style="color: white;">Made With <span style="font-size:150%;color:red;">&hearts;</span> In India
@@ -287,6 +300,7 @@
         
       </div>
     </div>
+   
   </footer>
   <!--/ Footer-->
 

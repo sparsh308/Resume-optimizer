@@ -80,12 +80,10 @@ WSGI_APPLICATION = 'optimizer.wsgi.application'
 DATABASES = {
     'default': {
          'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'database name',
-        'USER':'database user',
-        'PASSWORD':'database password',
-        'HOST':'database endpoint',
-        'PORT':'database port'
-        
+        'NAME':'Database1',
+        'USER':'postgres',
+        'PASSWORD':'1234',
+        'HOST':'localhost',
 
     }
 }
@@ -110,6 +108,7 @@ AWS_STORAGE_BUCKET_NAME = 'getinterviewcallstorage1'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 
 

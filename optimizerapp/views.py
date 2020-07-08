@@ -8,6 +8,7 @@ from django.conf import settings
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.core.files.base import ContentFile
+from storages.backends.s3boto3 import S3Boto3Storage
 import docx2txt
 import xlrd
 import os
@@ -65,17 +66,20 @@ def app_page(request):
         if user is not None:
             auth.login(request,user)
             devs=Developer_info.objects.all()
-
+            print(devs)
+           
             return render(request,"index.html",{'devs':devs})
 
         else:
             messages.info(request,'Invalid Credentials')
             return redirect('/#footer')
     else:
-      
-
-        return render(request,"main.html")
-
+       ## print(request.user.id)
+       ## id=(request.user.id)
+        ##users=UserProfile.objects.get(id=id)   
+        ##k=users.doc.url    
+       ## return render(request,"main.html",{'k':k})
+          return render(request,"main.html")
 def logout(request):
     auth.logout(request)
     return redirect('/')
