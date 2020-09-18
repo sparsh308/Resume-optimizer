@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'eo1-cv%t@dm$6*he&5a_oi@uj4no_!ipx9#@5z+-j82v(^dj$2'
+SECRET_KEY = '****************************'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -104,7 +104,7 @@ DATABASES['default'].update(db_from_env)
 
 AWS_ACCESS_KEY_ID = '************'
 AWS_SECRET_ACCESS_KEY = '***************'
-AWS_STORAGE_BUCKET_NAME = 'getinterviewcallstorage1'
+AWS_STORAGE_BUCKET_NAME = '**************************'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
